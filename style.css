@@ -1,3 +1,31 @@
-h1 {
-    font-weight: 800;
+.cd_box {
+    display: inline-flex;
+    margin-left: 14%;
+    border: 1px solid black ;
+    border-radius: 20px;
+    padding : 10px;
+}
+.cd_box:hover {
+    background-color: black ;
+}
+
+.cd_box:hover > .caracteristique {
+    color: white; 
+}
+
+.caracteristique{
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    margin-left:10px;
+}
+
+.titre{
+    margin-top: 5px;
+}
+
+.pochette {
+    height:200px;
+    margin-left: 20px;
+    border-radius: 20px;
 }
