@@ -11,15 +11,24 @@
 
     <p>voici un paragraphe</p>
 
+    <div class="list_cd">
+        <div class="cd_box">
+            <div class="caracteristique" >        
+                <p class="titre">Jeannine</p>
+                <p class="auteur">Lomepal</p>
+                <p class="prix" >19,99€</p>
+            </div>
+            <img class="pochette" src="Lomepal.jpg"/>
+            </div>
 
-    <div class="cd_box">
-
-        <div class="caracteristique" >        
-            <p class="titre">Jeannine</p>
-            <p class="auteur">Lomepal</p>
-            <p class="prix" >19,99€</p>
+            <div class="cd_box">
+            <div class="caracteristique" >        
+                <p class="titre">Jeannine</p>
+                <p class="auteur">Lomepal</p>
+                <p class="prix" >19,99€</p>
+            </div>
+            <img class="pochette" src="Lomepal.jpg"/>
         </div>
-        <img class="pochette" src="Lomepal.jpg"/>
     </div>
 <!-- 
     début commentaire
