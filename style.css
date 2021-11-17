@@ -1,13 +1,39 @@
+.list_cd{
+    display:flex;
+    flex-direction:column;
+}
+
 .cd_box {
-    display: inline-flex;
+    display:flex;
+    width:320px;
     margin-left: 14%;
+    margin-bottom: 50px;
     border: 1px solid black ;
     border-radius: 20px;
     padding : 10px;
+    animation-name: increase_cd_box ;
+    animation-duration: 1s;
 }
+
+@keyframes reduce_cd_box {
+    from {width:320px;background-color: white;color:black;}
+    to {width:200px;background-color: black;color:white; }
+  }
+
+@keyframes increase_cd_box {
+    from {width:200px;background-color: black;color:white; }
+    to {width:320px;background-color: white;color:black;}
+}
+
 .cd_box:hover {
     background-color: black ;
+    width:200px;
+    animation-name: reduce_cd_box ;
+    animation-duration: 1s;
 }
+
+
+  
 
 .cd_box:hover > .caracteristique {
     color: white; 
@@ -16,6 +42,7 @@
 .caracteristique{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     font-size: x-large;
     margin-left:10px;
 }
@@ -28,4 +55,5 @@
     height:200px;
     margin-left: 20px;
     border-radius: 20px;
+    margin-top:3px;
 }
