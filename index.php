@@ -30,23 +30,26 @@
             <img class="pochette" src="Lomepal.jpg"/>
         </div>
     </div>
-<!-- 
-    début commentaire
+
     <?php 
+        include 'bdd_xml_cd.php';
+        
+        $bdd = new SimpleXMLElement($xmlstr);
+        $nb_cd = $bdd->count();
 
-        $hostname = "lakartxela.iutbayonne.univ-pau.fr";
-        $user = "tbuil";
-        $password = "tbuil";
-        $bdd = "tbuil";
 
-        mysqli_connect($hostname, $user, $password, $bdd);
-        session_start();
-
-         
-    
+        for($i = 0; $i <= $nb_cd - 1; $i++ ){
+            echo '<div class="cd_box">';
+            echo '<div class="caracteristique" >';
+            echo '<p class="titre">'.$bdd->CD[1]->titre.'</p>';
+            echo  '<p class="auteur">'.$bdd->CD[1]->auteur.'</p>';
+            echo '<p class="prix" >'.$bdd->CD[1]->prix.'</p>';
+            echo '</div>';
+            echo '<img class="pochette" src="Lomepal.jpg"/>';
+            echo '</div>';
+        }
     ?>
-    fin du commentaire
--->
+
 
 </body>
 </html>
