@@ -11,7 +11,7 @@
 
     <p>voici un paragraphe</p>
 
-    <div class="list_cd">
+    <!-- <div class="list_cd">
         <div class="cd_box">
             <div class="caracteristique" >        
                 <p class="titre">Jeannine</p>
@@ -29,7 +29,8 @@
             </div>
             <img class="pochette" src="Lomepal.jpg"/>
         </div>
-    </div>
+    </div> -->
+
 
     <?php 
         include 'bdd_xml_cd.php';
@@ -39,17 +40,21 @@
 
 
         for($i = 0; $i <= $nb_cd - 1; $i++ ){
-            echo '<div class="cd_box">';
-            echo '<div class="caracteristique" >';
-            echo '<p class="titre">'.$bdd->CD[1]->titre.'</p>';
-            echo  '<p class="auteur">'.$bdd->CD[1]->auteur.'</p>';
-            echo '<p class="prix" >'.$bdd->CD[1]->prix.'</p>';
-            echo '</div>';
-            echo '<img class="pochette" src="Lomepal.jpg"/>';
-            echo '</div>';
+        
+    ?>
+            <a href="detail.php?id=<?=$bdd->CD[$i]->id?>">
+                <div class="cd_box">
+                    <div class="caracteristique" >
+                        <p class="titre"><?=$bdd->CD[$i]->titre?></p>
+                        <p class="auteur"><?=$bdd->CD[$i]->auteur?></p>
+                        <p class="prix" ><?=$bdd->CD[$i]->prix?>€</p>
+                    </div>
+                    <img class="pochette" src="<?=$bdd->CD[$i]->image?>"/>
+                </div>
+            </a>
+    <?php    
         }
     ?>
-
 
 </body>
 </html>
