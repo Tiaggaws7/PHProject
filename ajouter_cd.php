@@ -33,5 +33,6 @@
     finsert_ligne("copie_bdd_xml_cd.php", "<image></image> ", $line); $line++;
     finsert_ligne("copie_bdd_xml_cd.php", "</CD>", $line); $line++;
 
+    file_put_contents("copie_bdd_xml_cd.php", str_replace('$xmlstr = <<<XML ', '$xmlstr = <<<XML', file_get_contents("copie_bdd_xml_cd.php")));
     
 ?>
