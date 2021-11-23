@@ -16,6 +16,27 @@
             fclose ($fp);
             return true;
     }
+
+    function insert_CD($bdd, $titreCD, $auteurCD, $genreCD, $prixCD, $imageCD, $imageReduiteCD)
+    {
+        // Ligne de l'entrer dans la base de données d'un CD -1
+        $line = 4;
+        
+        // Génération d'un identifiant unique
+        $newId = uniqid();
+
+        // Insertion des valeurs du CD dans la base de données
+        finsert_ligne($bdd, "<CD>", $line); $line++;
+        finsert_ligne($bdd, "<id>$newId</id>", $line); $line++;
+        finsert_ligne($bdd, "<titre>$titreCD</titre>", $line); $line++;
+        finsert_ligne($bdd, "<auteur>$auteurCD</auteur> ", $line); $line++;
+        finsert_ligne($bdd, "<genre>$genreCD</genre>", $line); $line++;
+        finsert_ligne($bdd, "<prix>$prixCD</prix> ", $line); $line++;
+        finsert_ligne($bdd, "<image>$imageCD</image> ", $line); $line++;
+        finsert_ligne($bdd, "<imageReduite>$imageReduiteCD</imageReduite> ", $line); $line++;
+        finsert_ligne($bdd, "</CD>", $line);
+            
+    }
     
     // Base de données
     include 'copie_bdd_xml_cd.php';
@@ -30,14 +51,14 @@
             $name=$_FILES['image']['name'];
             $upload->upload($tmp_name, $name);
     }
+    if(isset($_POST['Enregistrer']) && !empty($_POST['Enregistrer']))
+    {
+            $tmp_name_reduite=$_FILES['imageReduite']['tmp_name'];
+            $name_reduite=$_FILES['imageReduite']['name'];
+            $upload->upload($tmp_name_reduite, $name_reduite);
+    }
 
-    // Ligne de l'entrer dans la base de données d'un CD -1
-    $line = 4;
-    
-    // Génération d'un identifiant unique
-    $newId = uniqid();
-     
-    // Récuperration des valeurs à rentrer dans la base de données
+    // Récupération des valeurs à rentrer dans la base de données venant du formulaire
     $titreCD = $_POST['titre'];
     $auteurCD = $_POST['auteur'];
     $genreCD = $_POST['genre'];
@@ -45,17 +66,13 @@
     if(!empty ($name)){
         $imageCD = date("G-i-s").$name;
     }else { $imageCD = "icon_image.png"; }
+    if(!empty ($name_reduite)){
+        $imageReduiteCD = date("G-i-s").$name_reduite;
+    }else { $imageReduiteCD = "icon_image.png"; }
     
 
     // Insertion des valeurs du CD dans la base de données
-    finsert_ligne($bdd, "<CD>", $line); $line++;
-    finsert_ligne($bdd, "<id>$newId</id>", $line); $line++;
-    finsert_ligne($bdd, "<titre>$titreCD</titre>", $line); $line++;
-    finsert_ligne($bdd, "<auteur>$auteurCD</auteur> ", $line); $line++;
-    finsert_ligne($bdd, "<genre>$genreCD</genre>", $line); $line++;
-    finsert_ligne($bdd, "<prix>$prixCD</prix> ", $line); $line++;
-    finsert_ligne($bdd, "<image>$imageCD</image> ", $line); $line++;
-    finsert_ligne($bdd, "</CD>", $line); $line++;
+    insert_CD($bdd, $titreCD, $auteurCD, $genreCD, $prixCD, $imageCD, $imageReduiteCD);
 
     // On remplace la ligne : $xmlstr = <<<XML , car un espace se génère et cela entraine un disfonctionnement de la base de donées
     file_put_contents($bdd, str_replace('$xmlstr = <<<XML ', '$xmlstr = <<<XML', file_get_contents($bdd)));
@@ -63,5 +80,3 @@
     header("Location: nomPageAdmin.php");
     die();
 ?>
-
-    
