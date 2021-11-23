@@ -48,6 +48,6 @@
             file_put_contents("bdd_xml_panier.php", str_replace('$xmlstr = <<<XML ', '$xmlstr = <<<XML', file_get_contents("bdd_xml_panier.php")));
         }
     }
-   header('Location: http://lakartxela.iutbayonne.univ-pau.fr/~tbuil/PHProject/');
+   header('Location: http://lakartxela.iutbayonne.univ-pau.fr/~tbuil/PHProject/home.php');
 
 ?>
