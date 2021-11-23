@@ -17,7 +17,7 @@ $xmlstr = <<<XML
         <titre>Jeannine</titre>
         <auteur>Lomepal</auteur>
         <genre>Rap</genre>
-        <prix>15,99</prix>
+        <prix>15</prix>
         <image_reduite>Reduit_Lomepal.jpg</image_reduite>
         <image>Lomepal.jpg</image>
     </CD>
@@ -26,7 +26,7 @@ $xmlstr = <<<XML
         <titre>Jeannine</titre>
         <auteur>Lomepal</auteur>
         <genre>Rap</genre>
-        <prix>15,99</prix>
+        <prix>15</prix>
         <image_reduite>Reduit_Lomepal.jpg</image_reduite>
         <image>Lomepal.jpg</image>
     </CD>
