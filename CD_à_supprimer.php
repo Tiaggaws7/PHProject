@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles_index.css" rel="stylesheet">
-    <title>SuperCD</title>
+    <title>SuperCD supprimer</title>
 </head>
 
 <nav class="header_nav">
