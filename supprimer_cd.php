@@ -1,19 +1,17 @@
 <?php
 
-    function supprLine($file, $line)
+    function suppr_line($file, $line)
     {
         $ptr = fopen($file, "r");
         $contenu = fread($ptr, filesize($file));
             
-        /* On a plus besoin du pointeur */
         fclose($ptr);
         
-        $contenu = explode(PHP_EOL, $contenu); /* PHP_EOL contient le saut à la ligne utilisé sur le serveur (\n linux, \r\n windows ou \r Macintosh */
+        $contenu = explode(PHP_EOL, $contenu); 
+
+        unset($contenu[$line]); 
+        $contenu = array_values($contenu); 
             
-        unset($contenu[$line]); /* On supprime la ligne 52 par exemple */
-        $contenu = array_values($contenu); /* Ré-indexe l'array */
-            
-        /* Puis on reconstruit le tout et on l'écrit */
         $contenu = implode(PHP_EOL, $contenu);
         $ptr = fopen($file, "w");
         fwrite($ptr, $contenu);
@@ -21,20 +19,41 @@
 
     }
 
-    function supprCD($file, $lineId)
+    function suppr_CD($file, $idCD)
     {
-        $line = $lineId - 2;
-        for ($i=0; $i < 8; $i++) {
-            supprLine($file,$line);
-        }
+        // Récupérer le nom des images
+        include $file;
         
+        $bdd = new SimpleXMLElement($xmlstr);
+        $nb_cd = $bdd->count();
+
+        for($i = 0; $i <= $nb_cd - 1; $i++ ){
+            if($idCD == $bdd->CD[$i]->id){
+                $numCD = $i;
+                $nameImage = $bdd->CD[$i]->image;
+                $nameImageReduite = $bdd->CD[$i]->imageReduite;
+            }    
+        }
+
+        // Calculer le numéro de la première ligne a supprimer -1
+        $line = 4 + 8 * $numCD;
+        // Supprime un CD dans la base de données
+        for ($i=0; $i < 9; $i++) {
+            suppr_line($file, $line);
+        }
+
+        // Supprime les images corrspondantes
+        require 'uploadFile.php';
+        $upload = new uploadFile();
+        if($nameImage != "icon_image.png"){
+            $upload->suppr($nameImage);
+        }
+        if($nameImageReduite != "icon_image.png"){
+            $upload->suppr($nameImageReduite);
+        }
     }
 
-    $bdd = 'bdd_xml_cd.php';
-    supprCD($bdd,'6');
+    $bdd = "copie_bdd_xml_cd.php";
+    suppr_CD($bdd,'619cb14b99944');
 
-    // Suppression de l'image
-    /*require 'uploadFile.php';
-    $upload = new uploadFile();
-    $upload->suppr($name)*/
 ?>
