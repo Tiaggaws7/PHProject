@@ -1,0 +1,79 @@
+body {
+    text-align: center;
+}
+
+.all_cd {
+    margin-top: 100px;
+    display : flex;
+    justify-content: space-around;
+}
+
+.all_cd > a{
+    text-decoration: none;
+}
+
+
+.list_cd{
+    display:flex;
+    flex-direction:column;
+}
+
+.cd_box {
+    display:flex;
+    width:320px;
+    border: 1px solid black ;
+    border-radius: 20px;
+    padding : 10px;
+    margin-bottom: 200px;
+    animation-name: increase_cd_box ;
+    animation-duration: 1s;
+}
+
+@keyframes reduce_cd_box {
+    from {background-color: white;color:black;}
+    to {background-color: black;color:white; }
+  }
+
+@keyframes increase_cd_box {
+    from {background-color: black;color:white; }
+    to {background-color: white;color:black;}
+}
+
+.cd_box:hover {
+    background-color: black ;
+    animation-name: reduce_cd_box ;
+    animation-duration: 1s;
+}
+  
+
+.cd_box:hover > .caracteristique {
+    color:white; 
+}
+
+.caracteristique{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: x-large;
+    margin-left:10px;
+    margin-right:20px;
+    color:black;
+}
+
+.titre{
+    margin-top: 5px;
+}
+
+.pochette {
+    border-radius: 20px;
+    margin-top:3px;
+}
+
+.go_back {
+    color: black;
+    font-size: 2.5em;
+}
+
+.go_back:hover {
+    font-weight: bold;
+}

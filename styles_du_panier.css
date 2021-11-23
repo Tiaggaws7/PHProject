@@ -1,0 +1,79 @@
+body {
+    margin-top: 60px;
+    text-align: center;
+}
+
+h1 {
+    margin:0 auto;
+}
+
+p{
+    font-size: x-large;
+}
+
+.header_nav {
+    position : fixed;
+    top : 0;
+    left:0px;
+    margin : auto 0;
+    width : 100%;
+    background-color: lightgrey;
+    height : 60px;
+    display : flex;
+    justify-content: space-between;
+}
+
+.header_nav > a {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left:30px;
+    font-size: xx-large;
+    text-decoration: none;
+    color : black;
+}
+
+.header_nav > a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.header_nav > p {
+    font-weight: bold;
+    font-size: 3em;
+    margin : auto 0;
+}
+
+.header_nav > a > img {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right:30px;
+    width : 75px;
+    height : 50px;
+}
+
+.total {
+    font-weight: bold;
+    margin:20px auto;
+}
+
+.payer {
+    width:100px;
+    background-color: lightgray;
+    margin : 0 auto;
+    border-radius: 10px;
+}
+
+.payer > a {
+    text-decoration: none;
+    color: black;
+    font-size: xx-large;
+    border-radius: 5px;
+}
+
+.payer:hover > a {
+    color: white;
+}
+
+.payer:hover {
+    background-color: black;
+}
