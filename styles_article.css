@@ -1,0 +1,79 @@
+.header_nav {
+    position : fixed;
+    top : 0;
+    left:0px;
+    margin : auto 0;
+    width : 100%;
+    background-color: lightgrey;
+    height : 60px;
+    display : flex;
+    justify-content: space-between;
+}
+
+.header_nav > a {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left:30px;
+    font-size: xx-large;
+    text-decoration: none;
+    color : black;
+}
+
+.header_nav > a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.header_nav > p {
+    font-weight: bold;
+    font-size: 3em;
+    margin : auto 0;
+}
+
+.header_nav > a > img {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right:30px;
+    width : 75px;
+    height : 50px;
+}
+
+
+.caracteristique > p {
+    font-size: xx-large;
+}
+
+.cd_box {
+    margin : 200px auto ;
+    display:flex;
+    width:800px;
+    border-radius: 20px;
+    padding : 10px;
+    margin-bottom: 200px;
+}
+
+.caracteristique {
+    margin-right : 50px;
+    width : 300px;
+}
+
+form {
+    background-color:lightgray;
+    margin : 0 auto;
+    width : 100px;
+    border-radius: 20px;
+}
+
+button {
+    font-size: xx-large;
+    background-color: lightgray;
+    border : 0px;
+    border-radius: 20px;
+    width:160px;
+    height:90px;
+}
+
+button:hover {
+    color:white;
+    background-color: black;
+}

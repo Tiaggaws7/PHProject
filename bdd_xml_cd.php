@@ -1,0 +1,43 @@
+<?php 
+$xmlstr = <<<XML
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<bdd> 
+<CD> 
+<id>619d481be87f4</id> 
+<titre>Jeannine</titre> 
+<auteur>Lomepal</auteur> 
+<genre>rap</genre> 
+<prix>19</prix> 
+<image>20-59-23Pochette_Adele_30.jpg</image> 
+<imageReduite>20-59-23Reduit_Pochette_Adele_30.jpg</imageReduite> 
+</CD>
+<CD> 
+<id>619d47c0166b3</id> 
+<titre>Jeannine</titre> 
+<auteur>Lomepal</auteur> 
+<genre>rap</genre> 
+<prix>19</prix> 
+<image>20-57-52Pochette_Adele_30.jpg</image> 
+<imageReduite>20-57-52Reduit_Pochette_Adele_30.jpg</imageReduite> 
+</CD> 
+<CD> 
+<id>619d4769d7eb5</id> 
+<titre></titre> 
+<auteur></auteur> 
+<genre></genre> 
+<prix></prix> 
+<image>icon_image.png</image> 
+<imageReduite>icon_image.png</imageReduite> 
+</CD> 
+<CD> 
+<id>619d3c127ecdf</id> 
+<titre>album de ouf </titre> 
+<auteur>molmiere</auteur> 
+<genre>classic</genre> 
+<prix>199</prix> 
+<image>20-08-02Lomepal.jpg</image> 
+<imageReduite>20-08-02Reduit_Lomepal.jpg</imageReduite> 
+</CD> 
+</bdd> 
+XML; 
+?> 

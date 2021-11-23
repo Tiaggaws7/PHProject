@@ -1,0 +1,8 @@
+.go_back {
+    color: black;
+    font-size: 2.5em;
+}
+
+.go_back:hover {
+    font-weight: bold;
+}

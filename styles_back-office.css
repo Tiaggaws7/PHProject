@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+    color: black;
+    font-size: xx-large;
+    background-color: lightgray;
+    border-radius: 3px;
+}
+
+p {
+    padding-top: 20px;
+    height : 100px;
+    width : 400px;
+    border-radius: 20px;
+    text-align: center;
+}
