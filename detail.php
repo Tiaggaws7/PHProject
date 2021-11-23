@@ -9,7 +9,7 @@
 </head> 
 
 <nav class="header_nav">
-    <a href="index.php">Accueil</a>
+    <a href="home.php">Accueil</a>
     <p>SuperCD</p>
     <a href="panier.php"><img alt="logo panier" src="panier.png"/></a>
 </nav>
