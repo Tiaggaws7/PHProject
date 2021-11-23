@@ -15,6 +15,7 @@
                 <p>Genre : <input type="text" name="genre" /></p>
                 <p>Prix : <input type="text" name="prix" /></p>
                 <p>Image : <input type="file" name="image" /></p>
+                <p>Image Réduite : <input type="file" name="imageReduite" /></p>
                 
                 <p><input type="submit" value="Enregistrer" name="Enregistrer"></p>
                 </form>
