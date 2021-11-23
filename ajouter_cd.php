@@ -1,4 +1,7 @@
 <?php
+    // Base de données
+    include 'bdd_xml_cd.php';
+    $bdd = 'bdd_xml_cd.php';
 
     // Fonction premettant d'inserer du texte a une ligne donnée
     function finsert_ligne($fichier , $texte , $i){
@@ -37,10 +40,6 @@
         finsert_ligne($bdd, "</CD>", $line);
             
     }
-    
-    // Base de données
-    include 'copie_bdd_xml_cd.php';
-    $bdd = 'copie_bdd_xml_cd.php';
 
     // Upload de l'image
     require 'uploadFile.php';
@@ -77,6 +76,8 @@
     // On remplace la ligne : $xmlstr = <<<XML , car un espace se génère et cela entraine un disfonctionnement de la base de donées
     file_put_contents($bdd, str_replace('$xmlstr = <<<XML ', '$xmlstr = <<<XML', file_get_contents($bdd)));
     
-    header("Location: nomPageAdmin.php");
+    header("Location: back-office.php");
     die();
 ?>
+
+    
