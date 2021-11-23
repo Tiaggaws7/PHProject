@@ -1,4 +1,5 @@
 <?php
+    $bdd = "bdd_xml_cd.php";
 
     function suppr_line($file, $line)
     {
@@ -53,7 +54,8 @@
         }
     }
 
-    $bdd = "copie_bdd_xml_cd.php";
     suppr_CD($bdd,'619cb14b99944');
 
+    // Suppression de l'image
+    
 ?>
