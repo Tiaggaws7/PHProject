@@ -5,10 +5,10 @@
         {
             move_uploaded_file($tmp_name, 'images/'.date("G-i-s").$name);
         }
-        
+
         function suppr($name)
         {
-            unlink($name);
+            unlink('images/'.$name);
         }
     }
 ?>
