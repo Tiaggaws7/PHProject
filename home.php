@@ -10,6 +10,7 @@
 
 <nav class="header_nav">
     <a href="home.php">Accueil</a>
+    <a href="deconnexion.php">Se déconnecter</a>
     <p>SuperCD</p>
     <a href="panier.php"><img alt="logo panier" src="panier.png"/></a>
 </nav>
@@ -32,9 +33,9 @@
                     <div class="caracteristique" >
                         <p class="titre"><?=$bdd->CD[$i]->titre?></p>
                         <p class="auteur"><?=$bdd->CD[$i]->auteur?></p>
-                        <p class="prix" ><?=$bdd->CD[$i]->prix?>€</p>
+                        <p class="prix" ><?=$bdd->CD[$i]->prix?> €</p>
                     </div>
-                    <img class="pochette" src="<?=$bdd->CD[$i]->image_reduite?>"/>
+                    <img class="pochette" src="<?=$bdd->CD[$i]->imageReduite?>"/>
                 </div>
             </a>
     <?php    
@@ -42,8 +43,6 @@
 
     ?>
     </div>
-
-    <p class="voir_panier"><a  href="panier.php">Voir mon panier</a></p>
 
 </body>
 </html>
