@@ -48,7 +48,7 @@
         }
         elseif($identifant == "root"){
             if($motDePasse == "root"){ 
-                header('Location: nomPageAdmin.php');
+                header('Location: back-office.php');
                 die();
             }
             else{ 
