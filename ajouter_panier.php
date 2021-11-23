@@ -1,4 +1,5 @@
 <?php
+    include 'bdd_xml_cd.php';
 
     $id = $_GET["id"];
 
@@ -18,10 +19,7 @@
             return true;
     }
 
-
     $line = 4;
-
-    include 'bdd_xml_cd.php';
                 
     $bdd = new SimpleXMLElement($xmlstr);
     $nb_cd = $bdd->count();
